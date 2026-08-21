@@ -1,0 +1,32 @@
+
+python -m venv venv
+source venv/bin/activate
+
+pip install dvc[all] scikit-learn pandas pyyaml
+
+git init
+dvc init
+
+git add .
+git commit -m "init"
+
+# Run full pipeline
+dvc repro
+
+# View metrics
+dvc metrics show
+
+# Plot ROC
+dvc plots show
+
+# Run experiments
+dvc exp run
+
+# Change params.yaml (C or test_size) then:
+dvc exp run
+
+# Compare experiments
+dvc exp show
+
+# Visualize DAG
+dvc dag

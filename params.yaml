@@ -1,0 +1,7 @@
+
+model:
+  C: 1.0
+  max_iter: 200
+
+split:
+  test_size: 0.25
